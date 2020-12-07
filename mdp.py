@@ -26,13 +26,8 @@ class MDP:
         # List of values of all iterations so far
         self.policies = []
         # Get user input for terminal states locations and values
-        # self.board[0][1] = 1
-        # self.board[2][1] = -5
-        # self.terminals = [(0,1),(2,1)]
         self.terminals = self.set_terminals()
-
-        # self.board[1][1] = '-'
-        # self.obstacles = [(1,1)]
+        # Get user input for obstacle states locations and values
         self.obstacles = self.set_obstacles()
 
         # Set inital state as iterations list for now.
