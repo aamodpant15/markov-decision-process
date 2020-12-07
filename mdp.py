@@ -176,7 +176,7 @@ def main():
 
     parser.add_argument('rows', type = int,
                         help ='Number of rows.',
-                        metavar = 'r')
+                        metavar = 'rows')
     parser.add_argument('cols', type = int,
                         help ='Number of columns.',
                         metavar = 'c')
