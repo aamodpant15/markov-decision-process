@@ -182,7 +182,7 @@ def main():
                         metavar = 'c')
     parser.add_argument('rs', type = float,
                         help ='Standard reward.',
-                        metavar = 'r')
+                        metavar = 'rs')
     parser.add_argument('g', type = float,
                         help ='Gamma.',
                         metavar = 'g')
