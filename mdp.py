@@ -185,7 +185,7 @@ def main():
                         metavar = 'r')
     parser.add_argument('g', type = float,
                         help ='Gamma.',
-                        metavar = 'f')
+                        metavar = 'g')
     parser.add_argument('f', type = float,
                         help ='Probabilty of forward.',
                         metavar = 'f')
