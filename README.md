@@ -8,12 +8,12 @@ This command will iterate through the grid until the policies do not change anym
 Here is a longer description of the command line arguments:
 ```
 positional arguments:
-  r           Number of rows.
+  rows        Number of rows.
   c           Number of columns.
-  r           Standard reward.
+  rs          Standard reward.
   g           Gamma.
   f           Probabilty of forward.
   l           Probabilty of left.
   r           Probabilty of right.
-  ```
- 
+  ```  
+Try `python3 mdp.py 3 2 -0.1 0.8 0.6 0.2 0.2`, with terminal cells `0,1,1`, `2,1,-5`, and obstacles `1,1`. this should run for 3 iterations.
