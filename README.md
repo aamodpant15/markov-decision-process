@@ -15,5 +15,22 @@ positional arguments:
   f           Probabilty of forward.
   l           Probabilty of left.
   r           Probabilty of right.
-  ```  
+  ```
 Try `python3 mdp.py 3 2 -0.1 0.8 0.6 0.2 0.2`, with terminal cells `0,1,1`, `2,1,-5`, and obstacles `1,1`. this should run for 3 iterations.
+
+## Class MDP
+### Values on board from most recent complete iteration
+- board: Utility values of the most recent complete iteration
+- policy: Policy from most recent complete iteration 
+- rows: Number of rows
+- cols: Number of columns
+- reward: Reward value for non-terminal states
+- gamma: Gamma value
+- forward: Probability of going forward
+- left: Probabilty of going left
+- right: Probabilty of going right
+- (Probabilty of going back assumed to be 0)
+- policies: List of values of all iterations so far      
+- terminals: List of terminal cells' locations and values
+- obstacles: List of obstacle cells' locations
+- iterations: States with utility values for all iterations
