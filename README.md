@@ -19,7 +19,7 @@ positional arguments:
 Try `python3 mdp.py 3 2 -0.1 0.8 0.6 0.2 0.2`, with terminal cells `0,1,1`, `2,1,-5`, and obstacles `1,1`. this should run for 3 iterations.
 
 ## Class MDP
-### Values on board from most recent complete iteration
+### Class variables
 - board: Utility values of the most recent complete iteration
 - policy: Policy from most recent complete iteration 
 - rows: Number of rows
@@ -34,3 +34,11 @@ Try `python3 mdp.py 3 2 -0.1 0.8 0.6 0.2 0.2`, with terminal cells `0,1,1`, `2,1
 - terminals: List of terminal cells' locations and values
 - obstacles: List of obstacle cells' locations
 - iterations: States with utility values for all iterations
+
+### Class methods
+- `set_terminals()`: Called automatically when the class object is initialized. Prompts user to set the terminal cells' locations and values. Returns a list of tuples which represent the locations and values of terminal cells.
+- `set_obstacles()`: Called automatically when the class object is initialized. Prompts user to set the obstacle cells' locations. Returns a list of tuples which represent the locations of obstacles.
+- `iterate()`: Performs a single iteration over the grid, updating the utilities for all non-terminal, non-obstacle cells, updates the `self.policy`, `self.board`, `self.iterations`, and `self.policies` class variables. Does not return anything.
+- `converged()`: Returns true if the policy has converged over the last two complete iterations
+- `bellman_equation()`: Accepts a location on board and returns new utility value for it. WARNING: This method updates the policy variable as well. If you want to calculate the utility without updating the policy, comment out the call to `self.set_policy()`, and make sure to manually call it elsewhere, after each call.
+- `get_policy()`: Perform iterations till the policy converges. Prints the number of iterations, and final utilities and policy. These are also stored in the `self.board` and `self.policy` variables respectively.
