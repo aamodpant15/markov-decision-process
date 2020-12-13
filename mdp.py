@@ -25,8 +25,10 @@ class MDP:
 
         # List of values of all iterations so far
         self.policies = []
+
         # Get user input for terminal states locations and values
         self.terminals = self.set_terminals()
+
         # Get user input for obstacle states locations and values
         self.obstacles = self.set_obstacles()
 
@@ -119,8 +121,18 @@ class MDP:
 
         d = (self.forward * move_down) + (self.left * move_right) + (self.right * move_left)
 
+        print("[%d, %d]" % (i,j))
+        print("  Up    : (%f * %f) + (%f * %f) + (%f * %f) = %f" % (self.forward, move_up, self.left, move_left, self.right, move_right, u))
+        print("  Down  : (%f * %f) + (%f * %f) + (%f * %f) = %f" % (self.forward, move_down, self.left, move_right, self.right, move_left, d))
+        print("  Left  : (%f * %f) + (%f * %f) + (%f * %f) = %f" % (self.forward, move_left, self.left, move_down, self.right, move_up, l))
+        print("  Right : (%f * %f) + (%f * %f) + (%f * %f) = %f" % (self.forward, move_down, self.left, move_right, self.right, move_left, r))
+        print()
+
         # Bellman Equation with the max of the above four values
         utility = self.reward + self.gamma * max(u, d, l, r)
+
+        print("  Utility : %f + %f * max(%f, %f, %f, %f,) = %f" % (self.reward, self.gamma, u, d, l ,r, utility))
+        print()
 
         # Set the policy using the four directions and their values
         self.set_policy(i, j, [('u', u), ('d', d), ('l', l), ('r',r)])
