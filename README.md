@@ -16,7 +16,17 @@ positional arguments:
   l           Probabilty of left.
   r           Probabilty of right.
   ```
-Try `python3 mdp.py 3 2 -0.1 0.8 0.6 0.2 0.2`, with terminal cells `0,1,1`, `2,1,-5`, and obstacles `1,1`. this should run for 3 iterations.
+Try `python3 mdp.py 3 2 -0.1 0.8 0.6 0.2 0.2`, with terminal cells `0,1,1`, `2,1,-5`, and obstacles `1,1`. this should run for 3 iterations. Here's a sample output during the final iteration, for calculating the final utility of index `[2,1]`:
+```
+[2, 1]
+  Up    : (0.600000 * -1.700000) + (0.200000 * -0.100000) + (0.200000 * -1.700000) = -1.380000
+  Down  : (0.600000 * -1.700000) + (0.200000 * -1.700000) + (0.200000 * -0.100000) = -1.380000
+  Left  : (0.600000 * -0.100000) + (0.200000 * -1.700000) + (0.200000 * -1.700000) = -0.740000
+  Right : (0.600000 * -1.700000) + (0.200000 * -1.700000) + (0.200000 * -0.100000) = -1.700000
+
+  Utility : -0.100000 + 0.800000 * max(-1.380000, -1.380000, -0.740000, -1.700000,) = -0.692000
+
+```
 
 ## Class MDP
 ### Class variables
